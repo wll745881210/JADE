@@ -16,6 +16,8 @@
 *.svg
 *.log
 *.vtk
+*.npy
+*.npz
 .ipython*/
 #docs/
 *.DS_Store
