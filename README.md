@@ -22,8 +22,8 @@ JADE is a Julia module for modeling dust evolution in protoplanetary disks, incl
 using jade
 
 # Initialize disk model
-ppd = ppd_t()
-f_init!(ppd; 
+ppd = jade.ppd_t()
+f_init!(ppd,
     n_mbin=20,      # Number of dust size bins
     r_min_au=0.1,   # Inner radius [AU]
     r_max_au=2.0,   # Outer radius [AU]
@@ -35,10 +35,9 @@ f_init!(ppd;
 )
 
 # Run simulation
-f_major_loop!(ppd; 
-    tlim=1e6 * yr,  # Simulation time [s]
-    dt0=1e2 * yr,   # Initial timestep
-    nlim=1e6        # Max iterations
+jade.f_major_loop!(ppd,
+    tlim=1e4 * jade.yr,  # Simulation time [s]
+    dt0 =1e2 * jade.yr   # Initial timestep
 )
 ```
 
